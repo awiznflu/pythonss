@@ -7,23 +7,47 @@
 # print( str(Anna) + " divided by " + str(num) + " is " + str(Division))
 
 
-Chocolate = [ 'dark' , 'milk' , 'white' , ' toffee', 'hazelnut']
+# Chocolate = [ 'dark' , 'milk' , 'white' , ' toffee', 'hazelnut']
+#
+# print(Chocolate)
+#
+# print(Chocolate[-1].title())
 
-print(Chocolate)
-
-print(Chocolate[-1].title())
-
-countries = ['USA' , "Columbia" , "South Korea"]
+countries = ['South Korea' , 'Columbia' , 'USA']
 
 print (countries)
 
-print ("I am from " + str(countries[0]))
+print ("\nI am from " + str(countries[0]))
 
 
 countries[2] = "North Korea"
 
-print (countries[2])
+print ( countries[2])
 
-countries.append('China')
+countries.append('Serbia')
 
 print ("\nNew item added to list: " + str(countries[3]))
+
+print ("\n" + str(countries))
+
+countries.append("Africa")
+
+print ("\nI added a new element to the index: " + str(countries[4]))
+
+print ("\n" + str (countries))
+
+del countries[-1]
+
+print ("\n" + str(countries))
+
+not_where = 'Columbia'
+
+countries.remove(not_where)
+
+print ("\n" + str(countries))
+
+print ("\n" +str(not_where) + " is too expensive")
+
+countries.sort(reverse= False)
+
+print (countries)
