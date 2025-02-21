@@ -1,6 +1,6 @@
 active = True
 while active:
-    age= input("Eneter your age (or quit to stop)")
+    age= input("Enter your age (or quit to stop)")
     if age.lower() == 'quit':
        break
     else:
