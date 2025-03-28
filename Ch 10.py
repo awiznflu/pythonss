@@ -79,3 +79,55 @@ def greet_user():
 
 
 greet_user()
+
+from pathlib import Path
+
+
+def count_team_wins(file_name, team_name):
+    """Count the number of wins for a specified team in the World Series file."""
+    try:
+        # Open the file and read all lines
+        path = Path(file_name)
+        contents = path.read_text()
+
+        # Initialize a counter for the team name occurrences
+        count = 0
+
+        # Loop through the contents and check for the team name (case insensitive)
+        for line in contents.splitlines():
+            if team_name.lower() in line.lower():
+                count += 1
+
+        return count
+    except FileNotFoundError:
+        print(f"Error: The file '{file_name}' was not found.")
+        return None
+
+
+def main():
+    """Main function to get input from the user and print World Series count for the team."""
+    # Ask the user to enter a team name
+    team_name = input("Enter a team name to check how many times they have won the World Series: ").strip()
+
+    # File containing World Series winners
+    file_name = 'worldserieswinner.txt'
+
+    # Get the count of the team in the file
+    count = count_team_wins(file_name, team_name)
+
+    if count is not None:
+        if count > 0:
+            print(f"{team_name} has won the World Series {count} times.")
+        else:
+            print(f"{team_name} has not won the World Series.")
+    else:
+        print("Could not perform the search due to an error with the file.")
+
+
+# Call the main function
+main()
+
+
+
+
+
